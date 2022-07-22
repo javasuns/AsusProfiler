@@ -12,7 +12,7 @@ Power Controlling for ASUS laptops
 
 |  Windows |
 |  :----:  |
-|  [Download](https://bitbucket.org/javasuns/javafx-services/downloads/JavaFX_Services.exe)|
+|  [Download](https://github.com/javasuns/AsusProfiler/releases/download/AsusProfiler/AsusProfiler.zip)|
 
 ## Getting started
 
