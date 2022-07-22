@@ -14,8 +14,11 @@ Power Controlling for ASUS laptops
 ## Getting started
 
 To compile the software code yourself in Windows you would need to apply the following steps:
+### 1. Install Microsoft Visual Studio
 
-### 1. Setting JAVA_HOME and GRAALVM_HOME
+In order to create Microsft Windows native apps you will need Microsoft Visual Studio. Instructions can be found in [Gluon's website](https://docs.gluonhq.com/#platforms_windows).
+
+### 2. Setting JAVA_HOME and GRAALVM_HOME
 
 GraalVM is mandatory for creating native apps. It is available for download on the [GraalVM website](https://www.graalvm.org/downloads/). If you have a JDK already installed on your PC, it would be a wise to place GraalVM binaries under the same Java directory for consolidation. 
 JavaFX Services app has been tested against OpenJDK version 17.0.4 and GraalVM Community Edition 22.0.
@@ -25,7 +28,7 @@ JavaFX Services app has been tested against OpenJDK version 17.0.4 and GraalVM C
     JAVA_HOME=C:\Programs\Java\jdk-17.0.4
     GRAALVM_HOME=C:\Programs\Java\graalvm-ce-java17-22.1.0
 
-### 2. Tasks
+### 3. Tasks
 
 You can run the regular tasks to build and run your project as a regular Java project:
 
