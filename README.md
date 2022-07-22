@@ -4,6 +4,9 @@ Power Controlling for ASUS laptops
 [![BSD-3 license](https://img.shields.io/badge/license-BSD--3-%230778B9.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Screenshots
+|  Windows |
+|  :----:  |
+|  <img width="215" alt="AsusProfiler" src="https://user-images.githubusercontent.com/13131668/180485991-c9c1ae8b-5b28-4c46-90a4-2433e738aca6.PNG"> <img width="309" alt="LogViewer" src="https://user-images.githubusercontent.com/13131668/180486709-c997dc6d-3a65-46df-ab27-68659d29254b.PNG">|
 
 ## Builds
 
