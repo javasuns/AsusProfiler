@@ -25,15 +25,15 @@ JavaFX Services app has been tested against OpenJDK version 17.0.4 and GraalVM C
 
 **Windows Sample**
 
-    JAVA_HOME=C:\Programs\Java\jdk-17.0.4
-    GRAALVM_HOME=C:\Programs\Java\graalvm-ce-java17-22.1.0
+    set JAVA_HOME=C:\Programs\Java\jdk-17.0.4
+    set GRAALVM_HOME=C:\Programs\Java\graalvm-ce-java17-22.1.0
 
 ### 3. Tasks
 
 You can run the regular tasks to build and run your project as a regular Java project:
 
-    ./gradlew clean build
-    ./gradlew run
+    gradlew.bat clean build
+    gradlew.bat run
     
 Once you are able to run the pure Java project, you proceed with the native taks:    
 
@@ -43,9 +43,9 @@ This task does the AOT compilation. It is a very intensive and lengthy task (sev
 
 Run:
 
-    ./gradlew nativeCompile  # AOT Compilation
-    ./gradlew nativeLink     # Generates native executable
-    ./gradlew nativeRun      # Runs the generated executable
+    gradlew.bat nativeCompile  # AOT Compilation
+    gradlew.bat nativeLink     # Generates native executable
+    gradlew.bat nativeRun      # Runs the generated executable
 
 Alternatively, you may combine all the above commands into one:
 
