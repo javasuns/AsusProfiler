@@ -1,0 +1,57 @@
+plugins {
+    id 'application'
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.14-SNAPSHOT'
+    id 'com.gluonhq.gluonfx-gradle-plugin' version '1.0.14'
+}
+group = 'javasuns.profiler.asus'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+    maven { url "https://nexus.gluonhq.com/nexus/content/repositories/releases" }
+}
+
+// Enable Module Conventions
+java.modularity.inferModulePath = true          
+
+javafx {
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics' ]
+}
+
+application {
+     mainModule = 'javasuns.profiler.asus'
+     mainClass  = 'javasuns.profiler.asus.AsusProfiler'
+}
+
+mainClassName  = 'javasuns.profiler.asus.AsusProfiler'
+
+gluonfx {
+	
+    reflectionList = [
+               	"javasuns.profiler.asus.controller.MainScreenController", 
+				"javasuns.profiler.asus.controller.interfaces.Controller",
+				"javasuns.profiler.asus.controller.header.HeaderController",
+				"javasuns.profiler.asus.controller.popup.LogViewController",
+				"javasuns.profiler.asus.controller.tabs.TabController",
+                "javafx.fxml.FXMLLoader",
+                "javafx.scene.control.Button",
+                "javafx.scene.control.Label",
+                "javafx.scene.control.ProgressIndicator",
+                "javafx.scene.layout.AnchorPane",
+                "javafx.scene.layout.ColumnConstraints",
+                "javafx.scene.layout.GridPane",
+                "javafx.scene.layout.Region",
+                "javafx.scene.layout.RowConstraints",
+                "javafx.scene.layout.StackPane",
+                "javafx.scene.layout.HBox",
+                "javafx.scene.layout.VBox",
+                "javafx.scene.control.OverrunStyle",
+                "javafx.scene.CacheHint",
+                "javafx.scene.Cursor",
+                "javafx.geometry.NodeOrientation",
+				"javafx.scene.effect.DropShadow",
+				"javafx.geometry.Point3D"
+	]
+}
+
