@@ -41,7 +41,7 @@ Once you are able to run the pure Java project, you proceed with the native taks
 
 This task does the AOT compilation. It is a very intensive and lengthy task (several minutes, depending on your project and CPU).
 
-Run through **Developer Command Prompt for VS 2022**:
+Run the below commands through **x64 Native Tools Command Prompt for VS 2022**:
 
     gradlew.bat nativeCompile  # AOT Compilation
     gradlew.bat nativeLink     # Generates native executable
@@ -49,7 +49,7 @@ Run through **Developer Command Prompt for VS 2022**:
 
 Alternatively, you may combine all the above commands into one:
 
-    ./gradlew nativeBuild nativeRun  # "nativeBuild" combines nativeCompile and nativeLink.
+    gradlew.bat nativeBuild nativeRun  # "nativeBuild" combines nativeCompile and nativeLink.
     
     
 
