@@ -26,7 +26,7 @@ In order to create Microsft Windows native apps you will need Microsoft Visual S
 ### 2. Setting JAVA_HOME and GRAALVM_HOME
 
 GraalVM is mandatory for creating native apps. It is available for download on the [GraalVM website](https://www.graalvm.org/downloads/). If you have a JDK already installed on your PC, it would be a wise to place GraalVM binaries under the same Java directory for consolidation. 
-JavaFX Services app has been tested against OpenJDK version 17.0.4 and GraalVM Community Edition 22.0.
+ASUS Profiler app has been tested against OpenJDK version 17.0.4 and GraalVM Community Edition 22.0.
 
 **Windows Sample**
 
