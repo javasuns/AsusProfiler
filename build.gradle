@@ -5,11 +5,17 @@ plugins {
     id 'com.gluonhq.gluonfx-gradle-plugin' version '1.0.14'
 }
 group = 'javasuns.profiler.asus'
-version = '1.0'
+version = '1.1'
 
 repositories {
     mavenCentral()
-    maven { url "https://nexus.gluonhq.com/nexus/content/repositories/releases" }
+    maven { url "https://nexus.gluonhq.com/nexus/content/repositories/releases"}
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'javasuns.profiler.asus.AsusProfiler'
+    }
 }
 
 // Enable Module Conventions
