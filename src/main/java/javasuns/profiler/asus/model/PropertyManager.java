@@ -20,6 +20,7 @@
 package javasuns.profiler.asus.model;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -27,14 +28,18 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import javasuns.profiler.asus.model.ProfileManager.Profile;
+
 public class PropertyManager {
 	private static Properties properties;
+	private static Path propFile;
+	private final static String version = "1.1";
 	
 	// Load Application Properties
 	static {
 		properties = new Properties();
 		loadDefaultProperties();
-		Path propFile = Paths.get("application.properties"); 
+		propFile = Paths.get("application.properties"); 
 		try {
 			properties.load(Files.newBufferedReader(propFile));
 		} catch (IOException e) { e.printStackTrace(); }
@@ -49,7 +54,7 @@ public class PropertyManager {
 	} // getProjectPath()
 	
 	public static String getVersion() {
-		return properties.getProperty("project.version");
+		return version;
 	} // getVersion()
 	
 	public static Map<String,String> getProperties(String prefix) {
@@ -73,5 +78,19 @@ public class PropertyManager {
 		properties.put("tools.powermode",userDir + "/tools/PowerMode/PowerMode.exe");
 		properties.put("tools.powercfg", "C:/Windows/System32/powercfg.exe");
 		properties.put("tools.powershell", "powershell.exe");
-	}
-} // class Properties
+	} // loadDefaultProperties()
+	
+	public static void saveProfile(Profile profile) {
+		try {
+			String content = new String(Files.readAllBytes(propFile),StandardCharsets.UTF_8);
+			content = content.replaceAll("profile.active=.+", "profile.active=" + profile.name().toLowerCase());
+			Files.write(propFile, content.getBytes(StandardCharsets.UTF_8));
+			properties.setProperty("profile.active", profile.name());
+		} catch (IOException e) { e.printStackTrace(); }
+	} // saveProfile()
+	
+	public static Profile getActiveProfile() {
+		return Profile.valueOf(getProperty("profile.active").toUpperCase());
+	} // getActiveProfile()
+	
+} // class PropertyManager

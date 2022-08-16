@@ -23,6 +23,7 @@ import java.util.Map;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressIndicator;
@@ -31,9 +32,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javasuns.profiler.asus.controller.interfaces.Controller;
 import javasuns.profiler.asus.model.ProfileManager;
-import javasuns.profiler.asus.model.PropertyManager;
 import javasuns.profiler.asus.model.ProfileManager.Profile;
+import javasuns.profiler.asus.model.PropertyManager;
 import javasuns.profiler.asus.model.paneltracker.PanelTracker;
+import javasuns.profiler.asus.model.tray.TrayIconManager;
 
 
 public class MainScreenController extends Controller{
@@ -56,9 +58,6 @@ public class MainScreenController extends Controller{
 	Map<Profile, HBox> hboxes;
 	@FXML
 	protected void initialize() {
-		System.err.println(headerController);
-				System.err.println(PropertyManager.getProperty("project.name"));
-
 		headerController.setHeaderText(PropertyManager.getProperty("project.name"));
 		regions = Map.of(
 				Profile.ULTRA,rgnActivatedUltra,
@@ -79,8 +78,10 @@ public class MainScreenController extends Controller{
 			Platform.runLater(()-> {
 				if(loadingProfile)
 					hboxes.get(ProfileManager.getInst().getLoadingProfile()).getChildren().add(prgLoading);
-				else
+				else {
 					hboxes.get(ProfileManager.getInst().getLoadingProfile()).getChildren().remove(prgLoading);
+					PropertyManager.saveProfile(ProfileManager.getInst().getActiveProfile());
+				}
 			});
 		});
 		
@@ -90,6 +91,7 @@ public class MainScreenController extends Controller{
 				regions.get(profile).setVisible(true);
 			});
 		});
+		
 	} // initialize()
 
 	@FXML

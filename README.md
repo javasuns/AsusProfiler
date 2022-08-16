@@ -16,7 +16,49 @@ This application is created based on the scripts provided by **u/desentizised** 
 |  :----:  |
 |  [Download](https://github.com/javasuns/AsusProfiler/releases/download/AsusProfiler/AsusProfiler.zip)|
 
+## Important Note
+Since version 1.1 the executable image is not created with GraalVM and Gluon Client, since there is luck of AWT support which is needed for System Tray icons. Hence, jpackage is used to create the application image.
+
 ## Getting started
+
+To compile the software code yourself in Windows you would need to apply the following steps:
+
+### 1. Setting JAVA_HOME
+**Windows Sample**
+
+    set JAVA_HOME=C:\Programs\Java\jdk-17.0.4
+    
+### 2. Create executable Jar file.
+The below gradle command will create **AsusProfiler-1.1.jar** under ./build/libs
+
+    gradlew.bat clean build 
+    
+### 3. Use JPackage to create a Windows executable image
+
+#### 3a. Setting Windows Path
+    set PATH=%PATH%;%JAVA_HOME%\bin
+
+#### 3b. Download Jmods for JavaFX
+Since the application GUI is created with JavaFX you will need to download the latest jmods from [here](https://gluonhq.com/products/javafx/).
+Once downloaded, extract the zip file in your preffered path. In this example I have download jmods 18.0.2 and extracted them under C:\Programs\Java\javafx-jmods-18.0.2.
+
+#### 3c. Run JPackage to create image.
+
+    jpackage --input build/libs ^
+    --name AsusProfiler ^
+    --main-jar AsusProfiler-1.1.jar ^
+    --type app-image ^
+    --module-path "C:\Programs\Java\javafx-jmods-18.0.2" ^
+    --add-modules javafx.controls,javafx.fxml,javafx.graphics ^
+    --app-version 1.1 ^
+    --vendor "JavaSuns" ^
+    --copyright "Copyright © 2022-23 JavaSuns" ^
+    --icon src\main\resources\javasuns\profiler\asus\image\Logo.ico
+    
+#### 3d. Locate the executable.
+The AsusProfiler directory is created with the Windows executable in it. You would need to add the **application.properties** file in it before being able to run it.
+
+## Getting started !!! Old Method !!! (Native image with GraalVM and GluonHQ for v1.0)
 
 To compile the software code yourself in Windows you would need to apply the following steps:
 ### 1. Install Microsoft Visual Studio

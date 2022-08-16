@@ -19,6 +19,8 @@
 
 package javasuns.profiler.asus;
 
+import java.net.URL;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -26,11 +28,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javasuns.profiler.asus.model.PropertyManager;
 import javasuns.profiler.asus.model.paneltracker.PanelTracker;
-
+import javasuns.profiler.asus.model.tray.TrayIconManager;
 
 public class AsusProfiler extends Application {
 
-	private String cssFile  = getClass().getResource(PropertyManager.getProjectPath()+"/css/Main.css").toExternalForm();
+	private String cssFile = getClass().getResource(PropertyManager.getProjectPath() + "/css/Main.css")
+			.toExternalForm();
+	private URL iconFile = getClass().getResource(PropertyManager.getProjectPath() + "/image/Logo.png");
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -41,25 +45,28 @@ public class AsusProfiler extends Application {
 		PanelTracker.getTracker().showMainScreen();
 		primaryStage.setScene(new Scene(scenePane));
 		initPrimaryStage(primaryStage);
+		initTrayIcon(primaryStage);
 		primaryStage.show();
 	} // start()
-	
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
 
 	private void initPrimaryStage(Stage primaryStage) {
-		primaryStage.setTitle(PropertyManager.getProperty("project.name"));
-		primaryStage.getIcons().add(
-			new Image(AsusProfiler.class.getResource(PropertyManager.getProjectPath()+"/image/Logo.png").toExternalForm()));
-		primaryStage.setOnCloseRequest((t) -> { 
-			javafx.application.Platform.exit();
-			System.exit(0);
-		});
+		primaryStage.setTitle(PropertyManager.getProperty("project.name") + " v" + PropertyManager.getVersion());
+		primaryStage.getIcons().add(new Image(iconFile.toExternalForm()));
 		primaryStage.setWidth(300);
 		primaryStage.setHeight(400);
 		primaryStage.setMaxHeight(360);
 		primaryStage.setMaxWidth(300);
-	} // initPrimaryStage
+	}
+
+	private void initTrayIcon(Stage primaryStage) {
+		TrayIconManager.init(primaryStage, iconFile, PropertyManager.getProperty("project.name"));
+		var trayIconMngr = TrayIconManager.getInst();
+
+		trayIconMngr.getTrayIcon().getPopupMenu().setPane(PanelTracker.getTracker().getTrayIconPopupPane());
+	} // initTrayIconItems
+
 } // class ServicesFX

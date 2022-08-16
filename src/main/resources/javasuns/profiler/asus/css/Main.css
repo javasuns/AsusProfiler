@@ -1,4 +1,4 @@
-.root{
+* {
     -fx-text-inner-color: ladder(
         -fx-control-inner-background,
         -fx-light-text-color 45%,
@@ -9,10 +9,9 @@
 
 	 /** @SuppressWarnings */
     -fx-main-color: #666666; 
-     /** @SuppressWarnings */
 	-fx-options-color: #333333;
 	-fx-header-color: #393433;
-	-fx-button-color: #aa3d5d;
+	-fx-button-color: #aa3d5d;	
 	
 }
 
@@ -169,3 +168,61 @@ M1120 337 c0 -8 11 -24 25 -37 19 -18 28 -21 37 -12 9 9 6 18 -12 37 -25 27 -50 33
 	-fx-font-size: 1.3em;
 	-fx-pref-height: 3em;
 }
+
+/****************************
+ * MainScreen
+ ****************************/
+.button {
+	-fx-padding: 0;
+	-fx-backgournd-insets: 0 0 ;
+	-fx-background-radius: 0 0;
+	-fx-background-color: white;
+}
+
+.row {
+	-fx-min-height: 4.5em;
+    -fx-padding: 1em 1.25em;
+    -fx-border-color: transparent transparent lightgrey transparent;
+    -fx-spacing: 1.25em;
+}
+
+.row > .label {
+	-fx-text-fill: -fx-options-color;
+}
+
+.row_icon {
+	-fx-pref-width: 2.5em;
+	-fx-max-width: 2.5em;
+	-fx-pref-height: 2.5em;
+	-fx-max-height: 2.5em;
+	-fx-background-color: -fx-options-color;
+}
+
+.status_icon {
+	-fx-pref-width: 1.7em;
+	-fx-max-width: 1.7em;
+	-fx-pref-height: 1.7em;
+	-fx-max-height: 1.7em;
+	-fx-background-color: -fx-options-color;
+}
+
+.row:hover {
+	-fx-background-color: #F0F0F0;
+}
+.row:pressed {
+	-fx-background-color: #F0F0F0;
+}
+
+.row:pressed > .label {
+	-fx-text-fill: black;
+}
+
+.row:pressed > .row_icon {
+	-fx-background-color: black;
+}
+
+.gap_row {
+	-fx-pref-height: 0.05em;
+	-fx-background-color:  lightgray;
+}
+

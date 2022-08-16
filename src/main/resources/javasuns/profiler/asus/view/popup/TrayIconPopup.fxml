@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefWidth="300.0" style="-fx-background-color: white;" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javasuns.profiler.asus.controller.MainScreenController">
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-pref-width: 27em;" stylesheets="@../../css/Main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javasuns.profiler.asus.controller.MainScreenController">
    <top>
-      <fx:include fx:id="header" source="header/Header.fxml" />
+      <fx:include fx:id="header" source="../header/Header.fxml" />
    </top>
    <center>
    </center>
@@ -131,28 +131,6 @@
                               <String fx:value="status_icon" />
                            </styleClass>
                         </Region>
-                     </children>
-                     <padding>
-                        <Insets left="10.0" right="10.0" />
-                     </padding>
-                  </HBox>
-               </graphic>
-            </Button>
-            <Button fx:id="btnViewLog" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#buttonLogViewerPressed">
-               <graphic>
-                  <HBox fx:id="hboxPerformance1" alignment="CENTER" style="-fx-border-width: 3; -fx-border-style: dotted; -fx-border-color: lightgrey;" styleClass="row">
-                     <children>
-                        <Region maxWidth="1.7976931348623157E308" nodeOrientation="RIGHT_TO_LEFT">
-                           <styleClass>
-                              <String fx:value="svg_log" />
-                              <String fx:value="row_icon" />
-                           </styleClass>
-                        </Region>
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="increased_font" text="VIEW LOG">
-                           <HBox.margin>
-                              <Insets bottom="5.0" right="10.0" top="5.0" />
-                           </HBox.margin>
-                        </Label>
                      </children>
                      <padding>
                         <Insets left="10.0" right="10.0" />

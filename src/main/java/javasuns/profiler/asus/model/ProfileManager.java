@@ -37,14 +37,7 @@ public class ProfileManager {
 
 	public ProfileManager() {
 		profileLoader = new ProfileLoader();
-		activeProfileProperty.set(
-			switch(PropertyManager.getProperty("profile.active").toLowerCase()) {
-				case "ultra" -> Profile.ULTRA;
-				case "silent" -> Profile.SILENT;
-				case "balanced" -> Profile.BALANCED;
-				case "performance" -> Profile.PERFORMANCE;
-				default -> Profile.BALANCED;
-		});
+		activeProfileProperty.set(PropertyManager.getActiveProfile());
 		
 		profileLoader.runningProperty().addListener((a,b,running) -> {
 			if(!running) {
