@@ -30,11 +30,30 @@ To compile the software code yourself in Windows you would need to apply the fol
     
 ### 2. Create executable Jar file.
 The below gradle command will create **AsusProfiler-1.1.jar** under ./build/libs
+
     gradlew.bat clean build 
     
 ### 3. Use JPackage to create a Windows executable image
 
-    
+#### 3a. Setting Windows Path
+    set PATH=%PATH%;%JAVA_HOME%\bin
+
+#### 3b. Download Jmods for JavaFX
+Since the application GUI is created with JavaFX you will need to download the latest jmods from [here](https://gluonhq.com/products/javafx/).
+Once downloaded, extract the zip file in your preffered path. In this example I have download jmods 18.0.2 and extracted them under C:\Programs\Java\javafx-jmods-18.0.2.
+
+#### 3c. Run JPackage to create image.
+
+    jpackage --input build/libs ^
+    --name AsusProfiler ^
+    --main-jar AsusProfiler.jar ^
+    --type app-image ^
+    --module-path "C:\Programs\Java\javafx-jmods-18.0.2" ^
+    --add-modules javafx.controls,javafx.fxml,javafx.graphics ^
+    --app-version 1.1 ^
+    --vendor "JavaSuns" ^
+    --copyright "Copyright © 2022-23 JavaSuns" ^
+    --icon src\main\resources\javasuns\profiler\asus\image\Logo.ico
 
 ## Getting started (Native image with GraalVM and GluonHQ for v1.0)
 
