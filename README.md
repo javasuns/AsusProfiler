@@ -46,7 +46,7 @@ Once downloaded, extract the zip file in your preffered path. In this example I 
 
     jpackage --input build/libs ^
     --name AsusProfiler ^
-    --main-jar AsusProfiler.jar ^
+    --main-jar AsusProfiler-1.1.jar ^
     --type app-image ^
     --module-path "C:\Programs\Java\javafx-jmods-18.0.2" ^
     --add-modules javafx.controls,javafx.fxml,javafx.graphics ^
@@ -54,8 +54,11 @@ Once downloaded, extract the zip file in your preffered path. In this example I 
     --vendor "JavaSuns" ^
     --copyright "Copyright © 2022-23 JavaSuns" ^
     --icon src\main\resources\javasuns\profiler\asus\image\Logo.ico
+    
+#### 3d. Locate the executable.
+The AsusProfiler directory is created with the Windows executable in it. You would need to add the **application.properties** file in it before being able to run it.
 
-## Getting started (Native image with GraalVM and GluonHQ for v1.0)
+## Getting started !!! Old Method !!! (Native image with GraalVM and GluonHQ for v1.0)
 
 To compile the software code yourself in Windows you would need to apply the following steps:
 ### 1. Install Microsoft Visual Studio
