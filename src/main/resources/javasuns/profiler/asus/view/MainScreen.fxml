@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefWidth="300.0" style="-fx-background-color: white;" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javasuns.profiler.asus.controller.MainScreenController">
+   <top>
+      <fx:include fx:id="header" source="header/Header.fxml" />
+   </top>
+   <center>
+   </center>
+   <center>
+      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnUltra" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#buttonPressed">
+               <graphic>
+                  <HBox fx:id="hboxUltra" alignment="CENTER" styleClass="row">
+                     <children>
+                        <Region maxWidth="1.7976931348623157E308">
+                           <styleClass>
+                              <String fx:value="svg_device" />
+                              <String fx:value="row_icon" />
+                           </styleClass>
+                           <rotationAxis>
+                              <Point3D x="90.0" z="1.0" />
+                           </rotationAxis>
+                        </Region>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="increased_font" text="ULTRA" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Region fx:id="rgnActivatedUltra" maxWidth="1.7976931348623157E308">
+                           <styleClass>
+                              <String fx:value="svg_tick" />
+                              <String fx:value="status_icon" />
+                           </styleClass>
+                        </Region>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+            </Button>
+            <Button fx:id="btnSilent" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#buttonPressed">
+               <graphic>
+                  <HBox fx:id="hboxSilent" alignment="CENTER" styleClass="row">
+                     <children>
+                        <Region maxWidth="1.7976931348623157E308" nodeOrientation="RIGHT_TO_LEFT">
+                           <styleClass>
+                              <String fx:value="svg_share" />
+                              <String fx:value="row_icon" />
+                           </styleClass>
+                           <effect>
+                              <DropShadow height="1.0" radius="0.0" width="1.0" />
+                           </effect>
+                        </Region>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="increased_font" text="SILENT" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Region fx:id="rgnActivatedSilent" layoutX="283.0" layoutY="27.0" maxWidth="1.7976931348623157E308">
+                           <styleClass>
+                              <String fx:value="svg_tick" />
+                              <String fx:value="status_icon" />
+                           </styleClass>
+                        </Region>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+            </Button>
+            <Button fx:id="btnBalanced" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#buttonPressed">
+               <graphic>
+                  <HBox fx:id="hboxBalanced" alignment="CENTER" styleClass="row">
+                     <children>
+                        <Region maxWidth="1.7976931348623157E308" nodeOrientation="RIGHT_TO_LEFT">
+                           <styleClass>
+                              <String fx:value="svg_browser" />
+                              <String fx:value="row_icon" />
+                           </styleClass>
+                        </Region>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="increased_font" text="BALANCED" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Region fx:id="rgnActivatedBalanced" layoutX="283.0" layoutY="27.0" maxWidth="1.7976931348623157E308">
+                           <styleClass>
+                              <String fx:value="svg_tick" />
+                              <String fx:value="status_icon" />
+                           </styleClass>
+                        </Region>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+            </Button>
+            <Button fx:id="btnPerformance" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#buttonPressed">
+               <graphic>
+                  <HBox fx:id="hboxPerformance" alignment="CENTER" style="-fx-border-color: transparent;" styleClass="row">
+                     <children>
+                        <Region maxWidth="1.7976931348623157E308" nodeOrientation="RIGHT_TO_LEFT" rotate="180.0">
+                           <styleClass>
+                              <String fx:value="svg_notifications" />
+                              <String fx:value="row_icon" />
+                           </styleClass>
+                        </Region>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="increased_font" text="PERFORMANCE" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Region fx:id="rgnActivatedPerformance" maxWidth="1.7976931348623157E308">
+                           <styleClass>
+                              <String fx:value="svg_tick" />
+                              <String fx:value="status_icon" />
+                           </styleClass>
+                        </Region>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+            </Button>
+            <Button fx:id="btnViewLog" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#buttonLogViewerPressed">
+               <graphic>
+                  <HBox fx:id="hboxPerformance1" alignment="CENTER" style="-fx-border-width: 3; -fx-border-style: dotted; -fx-border-color: lightgrey;" styleClass="row">
+                     <children>
+                        <Region maxWidth="1.7976931348623157E308" nodeOrientation="RIGHT_TO_LEFT">
+                           <styleClass>
+                              <String fx:value="svg_log" />
+                              <String fx:value="row_icon" />
+                           </styleClass>
+                        </Region>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="increased_font" text="VIEW LOG">
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
