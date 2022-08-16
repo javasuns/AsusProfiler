@@ -58,7 +58,7 @@ Once downloaded, extract the zip file in your preffered path. In this example I 
 #### 3d. Locate the executable.
 The AsusProfiler directory is created with the Windows executable in it. You would need to add the **application.properties** file in it before being able to run it.
 
-## Getting started !!! Old Method !!! (Native image with GraalVM and GluonHQ for v1.0)
+## Getting started \[Old Method\] (Native image with GraalVM and GluonHQ for v1.0)
 
 To compile the software code yourself in Windows you would need to apply the following steps:
 ### 1. Install Microsoft Visual Studio
