@@ -16,7 +16,27 @@ This application is created based on the scripts provided by **u/desentizised** 
 |  :----:  |
 |  [Download](https://github.com/javasuns/AsusProfiler/releases/download/AsusProfiler/AsusProfiler.zip)|
 
+## Important Note
+Since version 1.1 the executable image is not created with GraalVM and Gluon Client, since there is luck of AWT support which is needed for System Tray icons. Hence, jpackage is used to create the application image.
+
 ## Getting started
+
+To compile the software code yourself in Windows you would need to apply the following steps:
+
+### 1. Setting JAVA_HOME
+**Windows Sample**
+
+    set JAVA_HOME=C:\Programs\Java\jdk-17.0.4
+    
+### 2. Create executable Jar file.
+The below gradle command will create **AsusProfiler-1.1.jar** under ./build/libs
+    gradlew.bat clean build 
+    
+### 3. Use JPackage to create a Windows executable image
+
+    
+
+## Getting started (Native image with GraalVM and GluonHQ for v1.0)
 
 To compile the software code yourself in Windows you would need to apply the following steps:
 ### 1. Install Microsoft Visual Studio
