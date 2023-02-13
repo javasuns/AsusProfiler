@@ -44,13 +44,13 @@ public class MainScreenController extends Controller{
 	BorderPane rootPane;
 	
 	@FXML
-	Button btnUltra, btnSilent, btnBalanced, btnPerformance;
+	Button btnUltra, btnSilent, btnBalanced, btnPerformance, btnDefault;
 	
 	@FXML
-	Region rgnActivatedUltra, rgnActivatedSilent, rgnActivatedBalanced, rgnActivatedPerformance;
+	Region rgnActivatedUltra, rgnActivatedSilent, rgnActivatedBalanced, rgnActivatedPerformance, rgnActivatedDefault;
 	
 	@FXML
-	HBox hboxUltra, hboxSilent, hboxBalanced, hboxPerformance;
+	HBox hboxUltra, hboxSilent, hboxBalanced, hboxPerformance, hboxDefault;
 	
 	ProgressIndicator prgLoading = new ProgressIndicator(-1);
 
@@ -59,17 +59,20 @@ public class MainScreenController extends Controller{
 	@FXML
 	protected void initialize() {
 		headerController.setHeaderText(PropertyManager.getProperty("project.name"));
+				
 		regions = Map.of(
 				Profile.ULTRA,rgnActivatedUltra,
 				Profile.SILENT,rgnActivatedSilent,
 				Profile.BALANCED,rgnActivatedBalanced,
-				Profile.PERFORMANCE,rgnActivatedPerformance);		
+				Profile.PERFORMANCE,rgnActivatedPerformance,
+				Profile.DEFAULT, rgnActivatedDefault);		
 		
 		hboxes = Map.of(
 				Profile.ULTRA,hboxUltra,
 				Profile.SILENT,hboxSilent,
 				Profile.BALANCED,hboxBalanced,
-				Profile.PERFORMANCE,hboxPerformance);		
+				Profile.PERFORMANCE,hboxPerformance,
+				Profile.DEFAULT, hboxDefault);		
 		
 		regions.entrySet().stream().forEach(entry -> entry.getValue().setVisible(false));
 		regions.get(ProfileManager.getInst().getActiveProfile()).setVisible(true);
@@ -100,6 +103,7 @@ public class MainScreenController extends Controller{
 						: event.getSource() == btnSilent ?  Profile.SILENT
 						: event.getSource() == btnBalanced ? Profile.BALANCED
 						: event.getSource() == btnPerformance ? Profile.PERFORMANCE
+						: event.getSource() == btnDefault ? Profile.DEFAULT
 						: null;
 		
 		System.err.println("Activating " + profile);

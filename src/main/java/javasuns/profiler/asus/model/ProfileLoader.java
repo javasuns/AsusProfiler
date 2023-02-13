@@ -106,12 +106,23 @@ public class ProfileLoader extends Thread {
 		var winServices = PropertyManager.getProperties("win.services.asus");
 		winServices.entrySet().stream().forEach(entry -> {
 			try {
-				String cmd = "sc " + (activate ? "start " : "stop ") + entry.getValue();
-				sb.append("[" + cmd + "]\n");
-				sb.append(CmdManager.getInst().run(cmd) + "\n");
-				cmd = "sc config " + entry.getValue() + " start=" + (activate ? "enabled" : "disabled");
-				sb.append("[" + cmd + "]\n");
-				sb.append(CmdManager.getInst().run(cmd) + "\n");
+				if(activate) {
+					String cmd = "sc config " + entry.getValue() + " start=auto";
+					sb.append("[" + cmd + "]\n");
+					sb.append(CmdManager.getInst().run(cmd) + "\n");
+					cmd = "sc start " + entry.getValue();
+					sb.append("[" + cmd + "]\n");
+					sb.append(CmdManager.getInst().run(cmd) + "\n");
+				}
+				else {
+					String cmd = "sc stop " + entry.getValue();
+					sb.append("[" + cmd + "]\n");
+					sb.append(CmdManager.getInst().run(cmd) + "\n");
+					cmd = "sc config " + entry.getValue() + " start=disabled";
+					sb.append("[" + cmd + "]\n");
+					sb.append(CmdManager.getInst().run(cmd) + "\n");
+				}
+				
 			} catch (IOException | InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

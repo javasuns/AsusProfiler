@@ -63,7 +63,8 @@ public class ProfileManager {
 		ULTRA("profile.ultra"),
 		SILENT("profile.silent"),
 		BALANCED("profile.balanced"),
-		PERFORMANCE("profile.performance");
+		PERFORMANCE("profile.performance"),
+		DEFAULT("profile.default");
 		
 		private String property;
 

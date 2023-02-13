@@ -57,8 +57,8 @@ public class AsusProfiler extends Application {
 		primaryStage.setTitle(PropertyManager.getProperty("project.name") + " v" + PropertyManager.getVersion());
 		primaryStage.getIcons().add(new Image(iconFile.toExternalForm()));
 		primaryStage.setWidth(300);
-		primaryStage.setHeight(400);
-		primaryStage.setMaxHeight(360);
+		primaryStage.setHeight(413);
+		primaryStage.setMaxHeight(413);
 		primaryStage.setMaxWidth(300);
 	}
 

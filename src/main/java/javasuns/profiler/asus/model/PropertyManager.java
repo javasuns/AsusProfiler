@@ -33,7 +33,7 @@ import javasuns.profiler.asus.model.ProfileManager.Profile;
 public class PropertyManager {
 	private static Properties properties;
 	private static Path propFile;
-	private final static String version = "1.1";
+	private final static String version = "1.2";
 	
 	// Load Application Properties
 	static {

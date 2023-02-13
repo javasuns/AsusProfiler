@@ -1,4 +1,10 @@
 ######################
+# ASUS Profiler v1.2 #
+######################
+[Changes]
+===> Enhancement: Extra button now allows to enable default Armory Create.
+
+######################
 # ASUS Profiler v1.1 #
 ######################
 [Changes]
