@@ -14,7 +14,7 @@ This application is created based on the scripts provided by **u/desentizised** 
 
 |  Windows |
 |  :----:  |
-|  [Download](https://github.com/javasuns/AsusProfiler/releases/download/AsusProfilerV1.2/AsusProfiler_v1.2.zip)|
+|  [Download](https://github.com/javasuns/AsusProfiler/releases/download/AsusProfilerV1.2/AsusProfiler_v1.20.zip)|
 
 ## Important Note
 Since version 1.1 the executable image is not created with GraalVM and Gluon Client, since there is luck of AWT support which is needed for System Tray icons. Hence, jpackage is used to create the application image.
