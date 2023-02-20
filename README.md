@@ -1,7 +1,7 @@
 # AsusProfiler
 Power Controlling for ASUS laptops
 
-This application is created based on the scripts provided by **u/desentizised** in this Reddit post ["How to gain even more control of your Flow X13"](https://www.reddit.com/r/FlowX13/comments/t32gra/how_to_gain_even_more_control_of_your_flow_x13/). There are 4 profiles you can choose from (ULTRA, SILENT, BALANCED and PERFORMANCE), which are fully customizable through the **applications.propreties**. You may compile the application yourself, which is created with Java and JavaFX, or run it straight away through the [ready executable](https://github.com/javasuns/AsusProfiler/releases/download/AsusProfiler/AsusProfiler.zip). 
+This application is created based on the scripts provided by **u/desentizised** in this Reddit post ["How to gain even more control of your Flow X13"](https://www.reddit.com/r/FlowX13/comments/t32gra/how_to_gain_even_more_control_of_your_flow_x13/). There are 4 profiles you can choose from (ULTRA, SILENT, BALANCED and PERFORMANCE), which are fully customizable through the **applications.propreties**. You may compile the application yourself, which is created with Java and JavaFX, or run it straight away through the [ready executable](https://github.com/javasuns/AsusProfiler/releases/download/AsusProfilerV1.2/AsusProfiler_v1.20.zip). 
 
 [![BSD-3 license](https://img.shields.io/badge/license-BSD--3-%230778B9.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
