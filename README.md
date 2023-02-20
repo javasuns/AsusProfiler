@@ -29,7 +29,7 @@ To compile the software code yourself in Windows you would need to apply the fol
     set JAVA_HOME=C:\Programs\Java\jdk-17.0.4
     
 ### 2. Create executable Jar file.
-The below gradle command will create **AsusProfiler-1.1.jar** under ./build/libs
+The below gradle command will create **AsusProfiler-1.2.jar** under ./build/libs
 
     gradlew.bat clean build 
     
@@ -46,11 +46,11 @@ Once downloaded, extract the zip file in your preffered path. In this example I 
 
     jpackage --input build/libs ^
     --name AsusProfiler ^
-    --main-jar AsusProfiler-1.1.jar ^
+    --main-jar AsusProfiler-1.2.jar ^
     --type app-image ^
     --module-path "C:\Programs\Java\javafx-jmods-18.0.2" ^
     --add-modules javafx.controls,javafx.fxml,javafx.graphics ^
-    --app-version 1.1 ^
+    --app-version 1.2 ^
     --vendor "JavaSuns" ^
     --copyright "Copyright © 2022-23 JavaSuns" ^
     --icon src\main\resources\javasuns\profiler\asus\image\Logo.ico
