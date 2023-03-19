@@ -8,7 +8,7 @@ This application is created based on the scripts provided by **u/desentizised** 
 ## Screenshots
 |  Windows |
 |  :----:  |
-|  <img width="215" alt="AsusProfiler" src="https://user-images.githubusercontent.com/13131668/218494119-19387f42-22f0-4f2c-8106-3f4afd93f7d3.png"> <img width="329" alt="LogViewer" src="https://user-images.githubusercontent.com/13131668/218494165-bd26cc6b-4a77-4ef1-94e2-30c03ef336fa.png">|
+|  <img width="215" alt="AsusProfiler" src="https://user-images.githubusercontent.com/13131668/226189652-5c1c5340-1fbf-4778-a561-44ebfc2f7edf.png"> <img width="215" alt="AsusProfiler" src="https://user-images.githubusercontent.com/13131668/226189757-5de49486-059c-49ff-8564-0469d54a0032.png"> <img width="329" alt="LogViewer" src="https://user-images.githubusercontent.com/13131668/218494165-bd26cc6b-4a77-4ef1-94e2-30c03ef336fa.png">|
 
 ## Builds
 
