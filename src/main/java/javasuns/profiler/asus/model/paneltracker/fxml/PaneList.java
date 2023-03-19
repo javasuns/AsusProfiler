@@ -37,6 +37,7 @@ public class PaneList {
 
 	public static enum PaneFXML {
 		MAIN("/MainScreen.fxml"), 
+		SETTINGS("/settings/Settings.fxml"),
 		TAB("/tabs/Tab.fxml"),
 		LOG_VIEW("/popup/LogView.fxml"),
 		TRAY_ICON_POPUP("/popup/TrayIconPopup.fxml");

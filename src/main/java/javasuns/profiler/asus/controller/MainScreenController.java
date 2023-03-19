@@ -23,6 +23,7 @@ import java.util.Map;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -35,7 +36,6 @@ import javasuns.profiler.asus.model.ProfileManager;
 import javasuns.profiler.asus.model.ProfileManager.Profile;
 import javasuns.profiler.asus.model.PropertyManager;
 import javasuns.profiler.asus.model.paneltracker.PanelTracker;
-import javasuns.profiler.asus.model.tray.TrayIconManager;
 
 
 public class MainScreenController extends Controller{
@@ -53,7 +53,9 @@ public class MainScreenController extends Controller{
 	HBox hboxUltra, hboxSilent, hboxBalanced, hboxPerformance, hboxDefault;
 	
 	ProgressIndicator prgLoading = new ProgressIndicator(-1);
-
+	
+	private EventHandler<Event> disableGUI = (e) -> e.consume();
+	
 	Map<Profile, Region> regions;
 	Map<Profile, HBox> hboxes;
 	@FXML
@@ -80,10 +82,14 @@ public class MainScreenController extends Controller{
 		ProfileManager.getInst().loadingProfileProperty().addListener((a,b,loadingProfile) -> {
 			Platform.runLater(()-> {
 				if(loadingProfile)
-					hboxes.get(ProfileManager.getInst().getLoadingProfile()).getChildren().add(prgLoading);
+					Platform.runLater(()-> {
+						rootPane.addEventFilter(Event.ANY, disableGUI);
+						hboxes.get(ProfileManager.getInst().getLoadingProfile()).getChildren().add(prgLoading);
+					});
 				else {
 					hboxes.get(ProfileManager.getInst().getLoadingProfile()).getChildren().remove(prgLoading);
 					PropertyManager.saveProfile(ProfileManager.getInst().getActiveProfile());
+					rootPane.removeEventFilter(Event.ANY, disableGUI);
 				}
 			});
 		});
@@ -106,7 +112,7 @@ public class MainScreenController extends Controller{
 						: event.getSource() == btnDefault ? Profile.DEFAULT
 						: null;
 		
-		System.err.println("Activating " + profile);
+		System.out.println("Activating " + profile);
 		ProfileManager.getInst().setActiveProfile(profile);
 
 	} // buttonPressed

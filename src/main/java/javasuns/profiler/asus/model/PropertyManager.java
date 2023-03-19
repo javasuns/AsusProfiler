@@ -33,21 +33,31 @@ import javasuns.profiler.asus.model.ProfileManager.Profile;
 public class PropertyManager {
 	private static Properties properties;
 	private static Path propFile;
-	private final static String version = "1.2";
+	private final static String version = "1.3";
 	
 	// Load Application Properties
 	static {
 		properties = new Properties();
 		loadDefaultProperties();
-		propFile = Paths.get("application.properties"); 
+		propFile = Paths.get(getApplicationDir() + "/application.properties"); 
 		try {
 			properties.load(Files.newBufferedReader(propFile));
 		} catch (IOException e) { e.printStackTrace(); }
 	}
 	
+	private static String getApplicationDir() {
+		String property = System.getProperty("jpackage.app-path");
+		String appDir = property != null ? Paths.get(property).getParent().toString() : ".";
+		return appDir;
+	}
+	
 	public static String getProperty(String key) {
 		return properties.getProperty(key);
 	} // getProperty()
+	
+	public static String getProperty(String key, String defaultValue) {
+		return (String) properties.getOrDefault(key, defaultValue);
+	}
 	
 	public static String getProjectPath() {
 		return "/" + properties.getProperty("project.package").replace(".", "/");
@@ -71,11 +81,11 @@ public class PropertyManager {
 	} // getProperties()
 	
 	private static void loadDefaultProperties() {
-		String userDir = System.getProperty("user.dir");
-		properties.put("tools.ryzenadj", userDir + "/tools/ryzenadj/ryzenadj.exe");
-		properties.put("tools.atrofac",  userDir + "/tools/atrofac/atrofac-cli.exe");	
-		properties.put("tools.nvoc",     userDir + "/tools/nvoc/nvoc.exe");
-		properties.put("tools.powermode",userDir + "/tools/PowerMode/PowerMode.exe");
+		String appDir = getApplicationDir();
+		properties.put("tools.ryzenadj", appDir + "/tools/ryzenadj/ryzenadj.exe");
+		properties.put("tools.atrofac",  appDir + "/tools/atrofac/atrofac-cli.exe");	
+		properties.put("tools.nvoc",     appDir + "/tools/nvoc/nvoc.exe");
+		properties.put("tools.powermode",appDir + "/tools/PowerMode/PowerMode.exe");
 		properties.put("tools.powercfg", "C:/Windows/System32/powercfg.exe");
 		properties.put("tools.powershell", "powershell.exe");
 	} // loadDefaultProperties()
@@ -92,5 +102,25 @@ public class PropertyManager {
 	public static Profile getActiveProfile() {
 		return Profile.valueOf(getProperty("profile.active").toUpperCase());
 	} // getActiveProfile()
+	
+	public static void setProperty(String key, String value) {
+		try {
+			String content = new String(Files.readAllBytes(propFile),StandardCharsets.UTF_8);
+			if(content.contains(key+"="))
+				content = content.replaceAll(key+"=.+", key+"="+value);
+			else
+				content = content + "\n " + key+"="+value;
+			Files.write(propFile, content.getBytes(StandardCharsets.UTF_8));
+			properties.setProperty(key, value);
+		} catch (IOException e) { e.printStackTrace(); }
+	} // setProperty()
+	
+	public static void setProperty(String key, boolean value) {
+		setProperty(key, String.valueOf(value));
+	}
+	
+	public static String getAppExecutablePath() {
+		return System.getProperty("jpackage.app-path");
+	}
 	
 } // class PropertyManager

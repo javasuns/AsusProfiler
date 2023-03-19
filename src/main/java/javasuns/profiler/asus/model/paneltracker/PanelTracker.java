@@ -89,6 +89,7 @@ private Stage popupWindow;
    } // goToLoginPane()
 	
    public Parent getMainScreenPane() { return panelList.getPane(PaneFXML.MAIN); }
+   public Parent getSettingsPane() { return panelList.getPane(PaneFXML.SETTINGS); }
    public Pane getTrayIconPopupPane() { return panelList.getPane(PaneFXML.TRAY_ICON_POPUP); }
    private Parent getLogViewer() { return panelList.getPane(PaneFXML.LOG_VIEW); }
    

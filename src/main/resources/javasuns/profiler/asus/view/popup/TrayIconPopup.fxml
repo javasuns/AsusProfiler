@@ -148,7 +148,7 @@
                               <String fx:value="row_icon" />
                            </styleClass>
                         </Region>
-                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="increased_font" text="DEFAULT (ASUS)" HBox.hgrow="ALWAYS">
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="increased_font" text="ASUS (DEFAULT)" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets bottom="5.0" right="10.0" top="5.0" />
                            </HBox.margin>

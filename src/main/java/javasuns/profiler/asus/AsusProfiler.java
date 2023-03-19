@@ -31,9 +31,9 @@ import javasuns.profiler.asus.model.paneltracker.PanelTracker;
 import javasuns.profiler.asus.model.tray.TrayIconManager;
 
 public class AsusProfiler extends Application {
+	private static boolean startOnTray;
 
-	private String cssFile = getClass().getResource(PropertyManager.getProjectPath() + "/css/Main.css")
-			.toExternalForm();
+	private String cssFile = getClass().getResource(PropertyManager.getProjectPath() + "/css/Main.css").toExternalForm();
 	private URL iconFile = getClass().getResource(PropertyManager.getProjectPath() + "/image/Logo.png");
 
 	@Override
@@ -46,10 +46,14 @@ public class AsusProfiler extends Application {
 		primaryStage.setScene(new Scene(scenePane));
 		initPrimaryStage(primaryStage);
 		initTrayIcon(primaryStage);
-		primaryStage.show();
+		if(startOnTray)
+			TrayIconManager.getInst().getTrayIcon().showTrayHideStage();
+		else
+			primaryStage.show();
 	} // start()
 
 	public static void main(String[] args) {
+		startOnTray = args.length>0 && args[0].equals("--startOnTray");
 		launch(args);
 	}
 
