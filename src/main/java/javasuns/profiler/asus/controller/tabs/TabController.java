@@ -19,7 +19,9 @@
 
 package javasuns.profiler.asus.controller.tabs;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javasuns.profiler.asus.controller.interfaces.Controller;
 
@@ -27,6 +29,14 @@ public class TabController extends Controller{
 
 	@FXML
 	AnchorPane tabPane;
+
+	public void setPane(Parent pane) {
+		Platform.runLater(() -> tabPane.getChildren().add(pane));
+	} // setPane()
 	
+	public void goToPreviousPane() { 
+		if(tabPane.getChildren().size()>1)
+			Platform.runLater(() -> tabPane.getChildren().remove(tabPane.getChildren().size()-1));
+	}
 
 } // class TabController

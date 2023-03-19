@@ -59,9 +59,7 @@ public class TrayIconFX {
 		primaryStage.setIconified(false);
 		primaryStage.iconifiedProperty().addListener((ov, t, minimized) -> {
 			if (minimized) {
-				saveStageSize();
-				Platform.runLater(() -> primaryStage.hide());
-				show();
+				showTrayHideStage();
 			}
 		});
 		
@@ -79,6 +77,8 @@ public class TrayIconFX {
 					else
 						popup.showPopup(e.getXOnScreen(), e.getYOnScreen());
 				}
+				else if (e.getButton() == MouseEvent.BUTTON3)
+					popup.showPopup(e.getXOnScreen(), e.getYOnScreen());				
 			} // mousePressed
 		});
 		
@@ -140,5 +140,11 @@ public class TrayIconFX {
 	private void restoreStageSize() {
 		primaryStage.setWidth(stageSizeBeforeMinimized.getWidth());
 		primaryStage.setHeight(stageSizeBeforeMinimized.getHeight());
+	}
+	
+	public void showTrayHideStage() {
+		saveStageSize();
+		Platform.runLater(() -> primaryStage.hide());
+		show();
 	}
 }

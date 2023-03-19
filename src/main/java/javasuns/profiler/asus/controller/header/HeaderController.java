@@ -19,17 +19,31 @@
 
 package javasuns.profiler.asus.controller.header;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javasuns.profiler.asus.controller.interfaces.Controller;
+import javasuns.profiler.asus.model.paneltracker.PanelTracker;
 
 public class HeaderController extends Controller {
 
 	@FXML
 	Label lblTitle;
+	
+	@FXML
+	Button btnSettings, btnBack;
 
 	public void setHeaderText(String text) {
 		lblTitle.setText(text);
 	} // setHeaderText()
+	
+	@FXML
+	private void handleButtonAction(ActionEvent event) {
+		if (event.getSource() == btnBack)
+			PanelTracker.getTracker().getActiveTabController().goToPreviousPane();
+		else if (event.getSource() == btnSettings)
+			PanelTracker.getTracker().getActiveTabController().setPane(PanelTracker.getTracker().getSettingsPane());
+	} // handleButtonAction
 
 } // class HeaderController

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefWidth="300.0" style="-fx-background-color: white;" stylesheets="@../../css/Main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javasuns.profiler.asus.controller.settings.SettingsController">
+   <top>
+      <fx:include fx:id="header" source="../header/SettingsHeader.fxml" />
+   </top>
+   <center>
+   </center>
+   <center>
+      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnAutoStartup" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#buttonPressed">
+               <graphic>
+                  <HBox fx:id="hboxAutoStartup" alignment="CENTER" styleClass="row">
+                     <children>
+                        <Region maxWidth="1.7976931348623157E308">
+                           <styleClass>
+                              <String fx:value="svg_auto_startup" />
+                              <String fx:value="row_icon" />
+                           </styleClass>
+                           <rotationAxis>
+                              <Point3D x="90.0" z="1.0" />
+                           </rotationAxis>
+                        </Region>
+                        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="increased_font" text="Auto-Startup on Boot" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" right="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <CheckBox fx:id="cboxAutoStartup" disable="true" mnemonicParsing="false" style="-fx-opacity: 1;" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+            </Button>
+            <StackPane VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" style="-fx-spacing: 0.4em; -fx-padding: 2em;">
+                     <children>
+                        <Region fx:id="rgnLogo" styleClass="img_logo" />
+                        <Label fx:id="lblVersion" maxHeight="1.7976931348623157E308" text="v0.83" VBox.vgrow="ALWAYS">
+                           <graphic>
+                              <Label text="ASUS Profiler" />
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="increased_font" />
+                              <String fx:value="font_bold" />
+                           </styleClass>
+                        </Label>
+                        <Label fx:id="lblPrivacy" text="Created by JavaSuns" />
+                        <Label fx:id="lblWebLink" style="-fx-underline: true;" text="https://github.com/javasuns/AsusProfiler" />
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

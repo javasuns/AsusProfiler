@@ -34,4 +34,8 @@ module javasuns.profiler.asus {
 	exports javasuns.profiler.asus.model.paneltracker.fxml to javafx.fxml;
 
 	opens javasuns.profiler.asus.model.paneltracker.fxml to javafx.fxml;
+	
+	exports javasuns.profiler.asus.controller.settings to javafx.fxml;
+
+	opens javasuns.profiler.asus.controller.settings to javafx.fxml;
 }

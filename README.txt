@@ -1,4 +1,10 @@
 ######################
+# ASUS Profiler v1.3 #
+######################
+[Changes]
+===> Enhancement: Added Auto-Startup on Boot in Settings Menu
+
+######################
 # ASUS Profiler v1.2 #
 ######################
 [Changes]
