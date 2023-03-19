@@ -1,7 +1,7 @@
 # AsusProfiler
 Power Controlling for ASUS laptops
 
-This application is created based on the scripts provided by **u/desentizised** in this Reddit post ["How to gain even more control of your Flow X13"](https://www.reddit.com/r/FlowX13/comments/t32gra/how_to_gain_even_more_control_of_your_flow_x13/). There are 4 profiles you can choose from (ULTRA, SILENT, BALANCED and PERFORMANCE), which are fully customizable through the **applications.propreties**. You may compile the application yourself, which is created with Java and JavaFX, or run it straight away through the [ready executable](https://github.com/javasuns/AsusProfiler/releases/download/AsusProfilerV1.2/AsusProfiler_v1.20.zip). 
+This application is created based on the scripts provided by **u/desentizised** in this Reddit post ["How to gain even more control of your Flow X13"](https://www.reddit.com/r/FlowX13/comments/t32gra/how_to_gain_even_more_control_of_your_flow_x13/). There are 4 profiles you can choose from (ULTRA, SILENT, BALANCED and PERFORMANCE), which are fully customizable through the **applications.propreties**. You may compile the application yourself, which is created with Java and JavaFX, or run it straight away through the [ready executable](https://github.com/javasuns/AsusProfiler/releases/download/AsusProfilerV1.3/AsusProfiler_v1.30.zip). 
 
 [![BSD-3 license](https://img.shields.io/badge/license-BSD--3-%230778B9.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
@@ -14,7 +14,7 @@ This application is created based on the scripts provided by **u/desentizised** 
 
 |  Windows |
 |  :----:  |
-|  [Download](https://github.com/javasuns/AsusProfiler/releases/download/AsusProfilerV1.2/AsusProfiler_v1.20.zip)|
+|  [Download](https://github.com/javasuns/AsusProfiler/releases/download/AsusProfilerV1.3/AsusProfiler_v1.30.zip)|
 
 ## Important Note
 Since version 1.1 the executable image is not created with GraalVM and Gluon Client, since there is luck of AWT support which is needed for System Tray icons. Hence, jpackage is used to create the application image.
@@ -46,13 +46,13 @@ Once downloaded, extract the zip file in your preffered path. In this example I 
 
     jpackage --input build/libs ^
     --name AsusProfiler ^
-    --main-jar AsusProfiler-1.2.jar ^
+    --main-jar AsusProfiler-1.3.jar ^
     --type app-image ^
     --module-path "C:\Programs\Java\javafx-jmods-18.0.2" ^
     --add-modules javafx.controls,javafx.fxml,javafx.graphics ^
-    --app-version 1.2 ^
+    --app-version 1.3 ^
     --vendor "JavaSuns" ^
-    --copyright "Copyright © 2022-23 JavaSuns" ^
+    --copyright "Copyright (C) 2022-23" ^
     --icon src\main\resources\javasuns\profiler\asus\image\Logo.ico
     
 #### 3d. Locate the executable.
