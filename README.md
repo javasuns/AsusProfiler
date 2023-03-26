@@ -29,7 +29,7 @@ To compile the software code yourself in Windows you would need to apply the fol
     set JAVA_HOME=C:\Programs\Java\jdk-17.0.4
     
 ### 2. Create executable Jar file.
-The below gradle command will create **AsusProfiler-1.2.jar** under ./build/libs
+The below gradle command will create **AsusProfiler-1.3.jar** under ./build/libs
 
     gradlew.bat clean build 
     
